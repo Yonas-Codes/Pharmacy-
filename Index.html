@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A2540">
+<meta name="description" content="Dembel Pharmacy — trusted pharmacy care and everyday wellness essentials in Addis Ababa.">
+<title>Dembel Pharmacy | ደምበል ፋርማሲ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #0A2540;
+  --green: #10B981;
+  --cyan: #06B6D4;
+  --ink: #172B3A;
+  --muted: #657889;
+  --bg: #F8FAFC;
+  --line: #E3EBF1;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: "DM Sans", "Noto Sans Ethiopic", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button, input, textarea { font: inherit; }
+
+.container { width: min(1120px, calc(100% - 36px)); margin: auto; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 19px;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  font-size: .9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+  box-shadow: 0 9px 24px #10b98135;
+}
+
+.btn-primary:hover { background: #07996d; }
+
+.btn-outline {
+  background: white;
+  border-color: var(--line);
+  color: var(--navy);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #07966D;
+  font-size: .76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 23px;
+  height: 2px;
+  background: var(--green);
+}
+
+.section { padding: 85px 0; }
+
+.section-heading { margin-bottom: 35px; max-width: 650px; }
+
+.section-heading h2 {
+  color: var(--navy);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 13px 0;
+}
+
+.section-heading p { color: var(--muted); }
+
+/* NAVIGATION */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffffdf;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e3ebf1b5;
+}
+
+nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand { display: flex; align-items: center; gap: 12px; }
+
+.brand-logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid var(--line);
+}
+
+.brand-name { display: block; font-weight: 800; color: var(--navy); line-height: 1.2; font-size: 1.05rem; }
+.brand-sub { display: block; color: #07966D; font-size: .8rem; font-weight: 700; }
+
+.nav-links { display: flex; align-items: center; gap: 25px; }
+
+.nav-links > a:not(.btn) {
+  color: #536779;
+  font-size: .88rem;
+  font-weight: 600;
+}
+
+.nav-links > a:not(.btn):hover { color: #07966D; }
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--navy);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 22px;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0;
+  background:
+    radial-gradient(circle at 85% 20%, #06b6d419, transparent 27%),
+    radial-gradient(circle at 8% 85%, #10b98113, transparent 30%),
+    white;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(2.7rem, 5.5vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -3px;
+  margin: 20px 0;
+}
+
+.hero h1 span { color: #07996D; }
+
+.hero-copy {
+  color: var(--muted);
+  font-size: 1.03rem;
+  max-width: 550px;
+  margin-bottom: 27px;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 27px;
+  color: #607485;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.trust-row span { display: flex; align-items: center; gap: 7px; }
+
+.check {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #DDF8EC;
+  color: #07845F;
+  font-size: 12px;
+}
+
+.hero-art {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-banner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(10, 37, 64, 0.15);
+  border: 4px solid #ffffff;
+  background: white;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-banner-wrapper:hover .hero-banner-img {
+  transform: scale(1.02);
+}
+
+.float-note {
+  position: absolute;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 25px rgba(10, 37, 64, 0.12);
+  font-size: .8rem;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.8);
+  z-index: 2;
+}
+
+.float-note.one { top: 20px; left: -10px; }
+.float-note.two { bottom: 20px; right: -10px; }
+
+/* TRUST STRIP */
+
+.trust-strip { padding: 23px 0; background: white; border-block: 1px solid var(--line); }
+
+.strip-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.strip-label {
+  color: #8493A0;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.strip-item { color: #506779; font-size: .85rem; font-weight: 700; }
+
+/* SERVICES */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.service-card {
+  padding: 27px;
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  background: white;
+  transition: .25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #9de8ce;
+  box-shadow: 0 18px 40px #0a25400d;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 53px;
+  height: 53px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background: #DDF8EC;
+  color: #07845F;
+  font-size: 25px;
+}
+
+.service-card:nth-child(2n) .service-icon { background: #DFF7FC; color: #0787A0; }
+
+.service-card h3 { color: var(--navy); font-size: 1.05rem; margin-bottom: 9px; }
+.service-card p { color: var(--muted); font-size: .88rem; }
+
+/* PRESCRIPTION ORDER */
+
+.order-section { background: #EFF6F8; }
+
+.order-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.order-copy h2 {
+  color: var(--navy);
+  font-size: clamp(2.1rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 14px 0;
+}
+
+.order-copy > p { color: var(--muted); }
+
+.steps { display: grid; gap: 17px; margin-top: 27px; }
+
+.step { display: flex; gap: 13px; align-items: flex-start; }
+
+.step-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: white;
+  border: 1px solid #D7EEE5;
+  color: #07845F;
+  font-weight: 800;
+}
+
+.step strong { display: block; color: var(--navy); font-size: .9rem; }
+.step p { color: var(--muted); font-size: .82rem; margin: 2px 0 0; }
+
+.order-card {
+  padding: 29px;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid #DFE9EE;
+  box-shadow: 0 18px 45px #0a25400b;
+}
+
+.order-card h3 { color: var(--navy); margin-bottom: 5px; font-size: 1.25rem; }
+.order-card > p { color: var(--muted); font-size: .85rem; margin-bottom: 22px; }
+
+.field { margin-bottom: 16px; }
+
+.field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #344C60;
+  font-size: .83rem;
+  font-weight: 700;
+}
+
+.field input, .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #DCE6EC;
+  border-radius: 12px;
+  background: #FBFDFE;
+  outline: none;
+  color: var(--ink);
+}
+
+.field input:focus, .field textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #10b98120;
+}
+
+.field textarea { min-height: 90px; resize: vertical; }
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px dashed #BFD4DE;
+  border-radius: 13px;
+  background: #F8FCFD;
+}
+
+.upload-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #DFF7FC;
+  font-size: 21px;
+}
+
+.upload-text { min-width: 0; flex: 1; }
+.upload-text strong { display: block; color: var(--navy); font-size: .82rem; }
+.upload-text small { display: block; color: var(--muted); font-size: .72rem; overflow-wrap: anywhere; }
+.upload-box input { max-width: 190px; font-size: .75rem; }
+
+.privacy-note { margin: 13px 0 18px; color: #758694; font-size: .74rem; }
+.order-card .btn { width: 100%; }
+
+.form-message {
+  margin-top: 12px;
+  font-size: .83rem;
+  font-weight: 600;
+  color: #07845F;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.contact-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  background: white;
+}
+
+.contact-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 18px; }
+
+.contact-line { display: flex; gap: 13px; margin: 17px 0; align-items: flex-start; }
+
+.contact-icon {
+  flex: 0 0 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #DDF8EC;
+  font-size: 20px;
+}
+
+.contact-line strong { display: block; color: var(--navy); font-size: .86rem; }
+.contact-line p, .contact-line a { display: block; color: var(--muted); font-size: .86rem; overflow-wrap: anywhere; }
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #EDF2F5;
+  font-size: .86rem;
+  color: #52697A;
+}
+
+.hours-row:last-child { border: 0; }
+.hours-row strong { color: var(--navy); text-align: right; }
+
+.notice {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 13px;
+  background: #EFF8FA;
+  color: #526B7A;
+  font-size: .79rem;
+}
+
+/* FOOTER */
+
+footer { background: #071C30; color: #C4D3DE; padding: 35px 0 22px; }
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #ffffff20;
+}
+
+footer .brand-name { color: white; }
+footer .brand-sub { color: #10B981; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: .82rem; }
+.footer-links a:hover { color: white; }
+
+.footer-bottom {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #91A8B8;
+  font-size: .75rem;
+}
+
+.amharic { font-family: "Noto Sans Ethiopic", sans-serif; }
+
+@media (max-width: 850px) {
+  .nav-links { gap: 15px; }
+  .nav-links > a:not(.btn) { font-size: .8rem; }
+  .hero-grid { gap: 25px; }
+  .order-grid { gap: 25px; }
+}
+
+@media (max-width: 700px) {
+  .container { width: min(100% - 30px, 540px); }
+  .section { padding: 67px 0; }
+  nav { min-height: 70px; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0; right: 0; top: 70px;
+    padding: 15px 22px 22px;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 15px 25px #0a25400b;
+  }
+  .nav-links.open { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links > a:not(.btn) { padding: 12px 0; font-size: .92rem; }
+  .nav-links .btn { margin-top: 10px; }
+  .hero { padding: 55px 0 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+  .hero h1 { font-size: clamp(2.7rem, 11vw, 4rem); letter-spacing: -2px; }
+  .float-note.one { left: 0px; top: 10px; }
+  .float-note.two { right: 0px; bottom: 10px; }
+  .strip-inner { justify-content: flex-start; gap: 12px 20px; }
+  .strip-label { width: 100%; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .service-card { padding: 19px; }
+  .service-card h3 { font-size: .98rem; }
+  .service-card p { font-size: .82rem; }
+  .order-grid, .contact-grid { grid-template-columns: 1fr; }
+  .order-card, .contact-card { padding: 22px; }
+  .upload-box { flex-wrap: wrap; }
+  .upload-box input { max-width: 100%; width: 100%; margin-left: 54px; }
+}
+
+@media (max-width: 420px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .hero-actions .btn { width: 100%; }
+  .trust-row { gap: 10px; }
+  .float-note { font-size: .72rem; padding: 8px 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <nav class="container">
+    <a class="brand" href="#home" aria-label="Dembel Pharmacy home">
+      <img src="https://i.postimg.cc/DwnjdY5Q/1792418033663.jpg" alt="Dembel Pharmacy Logo" class="brand-logo-img">
+      <span>
+        <span class="brand-name">Dembel Pharmacy</span>
+        <span class="brand-sub amharic">ደምበል ፋርማሲ</span>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#order">Prescription help</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#order">Contact us ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Your health, our priority</span>
+        <h1>Care you can trust.<br><span>Health you can feel.</span></h1>
+        <p class="hero-copy">
+          Friendly pharmacy support for your everyday health needs.
+          Explore medicines, wellness essentials, and helpful service from a team
+          that puts your wellbeing first.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#order">Ask about a prescription →</a>
+          <a class="btn btn-outline" href="#services">Explore services</a>
+        </div>
+        <div class="trust-row">
+          <span><b class="check">✓</b> Friendly service</span>
+          <span><b class="check">✓</b> Everyday essentials</span>
+          <span><b class="check">✓</b> Helpful guidance</span>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Pharmacy care banner">
+        <div class="float-note one">✦ Care you can count on</div>
+        <div class="hero-banner-wrapper">
+          <img src="https://i.postimg.cc/GhkgD1Ph/1792419608077.jpg" alt="Dembel Pharmacy Hero Showcase" class="hero-banner-img">
+        </div>
+        <div class="float-note two">✚ Simple, helpful service</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="container strip-inner">
+      <span class="strip-label">Your health matters</span>
+      <span class="strip-item">✓ Responsible guidance</span>
+      <span class="strip-item">✚ Everyday essentials</span>
+      <span class="strip-item">♡ Personal attention</span>
+    </div>
+  </div>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">What we offer</span>
+        <h2>Everyday care, made simpler.</h2>
+        <p>Get help finding pharmacy essentials, with clear communication and a welcoming experience.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">✚</div>
+          <h3>Prescription medicines</h3>
+          <p>Ask our pharmacy team about prescription requirements and medicine availability.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">♡</div>
+          <h3>Health & wellness</h3>
+          <p>Explore everyday wellness essentials and products for your personal care routine.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌕</div>
+          <h3>Medicine availability</h3>
+          <p>Contact us to check whether a specific medicine or pharmacy product is available.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>Prescription support</h3>
+          <p>Get help understanding the next steps for your prescription and pharmacy visit.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">♧</div>
+          <h3>Personal care</h3>
+          <p>Ask about personal hygiene, skin care, and other everyday care essentials.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">☏</div>
+          <h3>Helpful service</h3>
+          <p>Reach out with questions before visiting so you can plan your pharmacy trip.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section order-section" id="order">
+    <div class="container order-grid">
+      <div class="order-copy">
+        <span class="eyebrow">Prescription support</span>
+        <h2>Need to check a medicine?</h2>
+        <p>Send an enquiry to the pharmacy. Tell us what you are looking for and how we can contact you.</p>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <div><strong>Enter your details</strong><p>Provide your name and the medicine you want to ask about.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <div><strong>Add prescription information</strong><p>You can select a prescription file on your device if needed.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <div><strong>Send your enquiry</strong><p>Your messaging app opens with your enquiry ready to send.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="order-card" id="orderForm">
+        <h3>Medicine enquiry</h3>
+        <p>Fill in the details below to prepare your message.</p>
+
+        <div class="field">
+          <label for="customerName">Your name</label>
+          <input id="customerName" name="name" type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="field">
+          <label for="customerPhone">Phone number</label>
+          <input id="customerPhone" name="phone" type="tel" placeholder="Your contact number">
+        </div>
+
+        <div class="field">
+          <label for="medicine">Medicine or product</label>
+          <input id="medicine" name="medicine" type="text" placeholder="What would you like to ask about?" required>
+        </div>
+
+        <div class="field">
+          <label for="details">Additional details (optional)</label>
+          <textarea id="details" name="details" placeholder="Any questions or details for the pharmacy?"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="prescription">Prescription file (optional)</label>
+          <div class="upload-box">
+            <span class="upload-icon">⇧</span>
+            <span class="upload-text">
+              <strong>Select a file</strong>
+              <small id="fileName">Image or PDF, if needed</small>
+            </span>
+            <input id="prescription" type="file" accept="image/*,.pdf">
+          </div>
+        </div>
+
+        <p class="privacy-note">Your file is not uploaded by this demo website. If you select one, attach it yourself in the messaging app before sending.</p>
+
+        <button class="btn btn-primary" type="submit">Prepare enquiry message ↗</button>
+        <div class="form-message" id="formMessage" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Get in touch</span>
+        <h2>We're here to help.</h2>
+        <p>Use the contact details below to ask questions or plan your visit.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact information</h3>
+          <div class="contact-line">
+            <span class="contact-icon">⌖</span>
+            <div><strong>Location</strong><p>Addis Ababa, Ethiopia</p></div>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">☏</span>
+            <div><strong>Phone</strong><a href="tel:+251911894769">+251 911 89 47 69</a></div>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">✉</span>
+            <div><strong>Questions?</strong><p>Contact the pharmacy to ask about products and services.</p></div>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">➤</span>
+            <div><strong>Telegram</strong><a href="https://t.me/" target="_blank" rel="noopener">Open Telegram</a></div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Opening hours</h3>
+          <div class="hours-row"><span>Monday – Friday</span><strong>8:00 AM – 8:00 PM</strong></div>
+          <div class="hours-row"><span>Saturday</span><strong>8:00 AM – 8:00 PM</strong></div>
+          <div class="hours-row"><span>Sunday</span><strong>9:00 AM – 6:00 PM</strong></div>
+          <div class="notice">Please confirm the pharmacy's actual opening hours and medicine availability before visiting. For urgent medical concerns, contact an appropriate healthcare professional or emergency service.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a class="brand" href="#home">
+        <img src="https://i.postimg.cc/DwnjdY5Q/1792418033663.jpg" alt="Dembel Pharmacy Logo" class="brand-logo-img">
+        <span>
+          <span class="brand-name">Dembel Pharmacy</span>
+          <span class="brand-sub amharic">ደምበል ፋርማሲ</span>
+        </span>
+      </a>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#order">Prescription support</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Dembel Pharmacy. All rights reserved.</p>
+      <p>Care you can trust. Health you can feel.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Display selected prescription filename
+  const fileInput = document.getElementById("prescription");
+  const fileName = document.getElementById("fileName");
+
+  fileInput.addEventListener("change", () => {
+    fileName.textContent = fileInput.files.length
+      ? fileInput.files[0].name
+      : "Image or PDF, if needed";
+  });
+
+  // WhatsApp configuration using phone number
+  const PHARMACY_WHATSAPP = "251911894769";
+
+  document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const medicine = document.getElementById("medicine").value.trim();
+    const details = document.getElementById("details").value.trim();
+    const selectedFile = fileInput.files.length ? fileInput.files[0].name : "No file selected";
+
+    const message =
+      "Hello Dembel Pharmacy!%0A%0A" +
+      "Medicine enquiry%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Phone: " + encodeURIComponent(phone || "Not provided") + "%0A" +
+      "Medicine/product: " + encodeURIComponent(medicine) + "%0A" +
+      "Additional details: " + encodeURIComponent(details || "None") + "%0A" +
+      "Selected prescription file: " + encodeURIComponent(selectedFile) + "%0A%0A" +
+      "I will attach the file in WhatsApp if needed.";
+
+    document.getElementById("formMessage").textContent =
+      "Opening WhatsApp. Please attach your prescription file there if needed.";
+
+    window.open("https://wa.me/" + PHARMACY_WHATSAPP + "?text=" + message, "_blank", "noopener");
+  });
+</script>
+
+</body>
+</html>
